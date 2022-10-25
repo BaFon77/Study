@@ -15,12 +15,17 @@ def func(conn, addr):
             with open("data_password.txt", "a", encoding="utf-8") as file1:
                 file1.write(str(addr[0]) + ";" + str(password))
             with open("data_log.txt") as file2:
-                file2.write(str(addr) + " connected")
+                file2.write(str(addr) + " connected\n")
 
 
-while True:
-    data = conn.recv(1024)
-    if not data:
-        break
-    conn.send(data.upper())
+    while True:
+        data = conn.recv(1024)
+        if not data:
+            break
+        if data != 'exit':
+            conn.send(data.upper())
+        else:
+            with open("data_log.txt", "a", encoding="utf-8") as file3:
+                file3.write(str(addr) + " disconnected\n")
+                break
 conn.close()
