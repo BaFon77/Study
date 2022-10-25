@@ -28,4 +28,4 @@ def func(conn, addr):
             with open("data_log.txt", "a", encoding="utf-8") as file3:
                 file3.write(str(addr) + " disconnected\n")
                 break
-conn.close()
+    conn.close()
