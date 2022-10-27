@@ -15,10 +15,6 @@ def crypt(data, keypublic, keyprivate):
     return ''.join(map(chr, [x + keypublic + keyprivate for x in map(ord, data)]))
 
 
-def send_key():
-    sock.send(pickle.dumps((p, g, A)))
-
-
 def generate_key():
     global K, B
     msg = sock.recv(1024)
