@@ -25,7 +25,7 @@ def generate_key():
 def main():
     msg = ''
     while msg != 'exit':
-        msg = input('Сообщение: ')
+        msg = input('Введите своё сообщение: ')
         sock.send(pickle.dumps(crypt(msg, K, B)))
     sock.close()
 
