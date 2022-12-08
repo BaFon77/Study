@@ -71,7 +71,7 @@ def process(req):
     return 'bad request'
 
 
-PORT = 6666
+PORT = 6984
 
 sock = socket.socket()
 sock.bind(('', PORT))
@@ -84,7 +84,8 @@ while True:
     request = conn.recv(1024).decode()
     print(request)
 
+    if request == 'exit':
+        conn.close()
+
     response = process(request)
     conn.send(response.encode())
-
-conn.close()

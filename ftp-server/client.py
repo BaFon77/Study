@@ -4,14 +4,18 @@ HOST = 'localhost'
 PORT = 6666
 
 while True:
-    request = input('>')
+    try:
+        request = input('>')
 
-    sock = socket.socket()
-    sock.connect((HOST, PORT))
+        sock = socket.socket()
+        sock.connect((HOST, PORT))
 
-    sock.send(request.encode())
+        sock.send(request.encode())
 
-    response = sock.recv(1024).decode()
-    print(response)
+        response = sock.recv(1024).decode()
+        print(response)
 
-    sock.close()
+        sock.close()
+    except ConnectionRefusedError:
+        print('Успешное отключение от сервера')
+        break
