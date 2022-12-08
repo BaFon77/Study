@@ -1,7 +1,7 @@
 import socket
 
 HOST = 'localhost'
-PORT = 6666
+PORT = 6984
 
 while True:
     try:

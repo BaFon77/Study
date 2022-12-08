@@ -9,13 +9,9 @@ cat <filename> - отправляет содержимое файла
 '''
 
 dirname = os.path.join(os.getcwd(), 'docs')
-print(dirname)
-print(os.getcwd())
 
 
 def process(req):
-    print('req = ', req)
-    print(req[:14] == 'copy_to_server')
 
     if req == 'pwd':
         return dirname
@@ -56,7 +52,6 @@ def process(req):
         return 'Такого файла не существует'
 
     elif req[:14] == 'copy_to_server':
-        print(1)
         req = req.split()
         path = os.path.join(os.getcwd(), 'docs', req[1])
         shutil.copyfile(req[2], path)
@@ -71,21 +66,26 @@ def process(req):
     return 'bad request'
 
 
-PORT = 6984
+def main():
+    PORT = 6984
 
-sock = socket.socket()
-sock.bind(('', PORT))
-sock.listen()
-print("Прослушиваем порт", PORT)
+    sock = socket.socket()
+    sock.bind(('', PORT))
+    sock.listen()
+    print("Прослушиваем порт", PORT)
 
-while True:
-    conn, addr = sock.accept()
+    while True:
+        conn, addr = sock.accept()
 
-    request = conn.recv(1024).decode()
-    print(request)
+        request = conn.recv(1024).decode()
+        print(request)
 
-    if request == 'exit':
-        conn.close()
+        if request == 'exit':
+            conn.close()
 
-    response = process(request)
-    conn.send(response.encode())
+        response = process(request)
+        conn.send(response.encode())
+
+
+if __name__ == '__main__':
+    main()
