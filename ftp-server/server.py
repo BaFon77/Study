@@ -72,7 +72,7 @@ def process(req):
 
 
 def main():
-    PORT = 6984
+    PORT = 6987
 
     sock = socket.socket()
     sock.bind(('', PORT))
