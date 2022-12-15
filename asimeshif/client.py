@@ -3,11 +3,19 @@ import pickle
 from random import randint
 
 
-sock = socket.socket()
-sock.connect(('127.0.0.1', 8080))
+def connection():
+    with socket.socket() as s:
+        s.connect(('127.0.0.1', 8080))
+        host = input('Host:')
+        s.send(pickle.dumps(host))
+        print(host)
+        return int(host)
 
-p, g, a = 7, 5, 3
+p, g, a = 7, 5, 5
 A = g ** a % p
+sock = socket.socket()
+sock.connect(('127.0.0.1', connection()))
+
 sock.send(pickle.dumps((p, g, A)))
 
 
