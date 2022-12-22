@@ -1,0 +1,47 @@
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #fff;
+}
+
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: #000000;
+}
+
+
+.nav {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.nav__link {
+    display: inline-block;
+    vertical-align:top;
+    margin: 0 15px;
+
+    color: #000000;
+    text-decoration: none;
+
+    transition: color .2s linear;
+}
+
+.nav__link:hover {
+    color: #fce38a;
+}

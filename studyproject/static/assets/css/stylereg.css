@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+
+}
+
+input {
+    height: 57px;
+    width: 100%;
+    color: #A4A4A4;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 21px;
+    border: 1px solid #D1D1D1;
+    border-radius: 15px;
+    padding-left: 58px;
+}
+
+main {
+    background: #F6FAFF;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-form-container {
+    max-width: 574px;
+    width: 574px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding-left: 114px;
+    padding-right: 114px;
+    padding-top: 83px;
+    padding-bottom: 34px;
+}
+
+.form-title {
+    color: #000000;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 38px;
+}
+
+.form-field {
+    margin-bottom: 34px;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    height: 57px;
+    background: #D083FF;
+    border-radius: 15px;
+    text-transform: uppercase;
+    border: 0;
+    font-family: "Rubik";
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #B53CFF;
+}
+
+.divider {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    padding-top: 34px;
+}
+
+.log {
+    display: inline-block;
+    vertical-align:top;
+    margin: 0 5px;
+
+    color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.header {
+    width: 100%;
+    height: 5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #fff;
+}
+
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: #000000;
+    margin: 5px;
+}
+
+
+.nav {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.nav__link {
+    display: inline-block;
+    vertical-align:top;
+    margin: 0 15px;
+
+    color: #000000;
+    text-decoration: none;
+
+    transition: color .2s linear;
+}
+
+.nav__link:hover {
+    color: #fce38a;
+}
